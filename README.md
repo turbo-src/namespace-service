@@ -12,16 +12,10 @@ docker-compose up --build -d
 docker pull node:16.15-bullseye
 ```
 
-### Get container id of privateStore_library_1
+### Enter bash or shell session in container namespace_library_1
 
 ```
-docker ps
-```
-
-### Enter bash or shell session in container privateStore_library_1
-
-```
-docker exec -it <privateStore_library_1 id> bash *or* sh
+docker exec -it namespace-db_library_1 bash
 ```
 
 ### Connect to the database, start the Graphql server, ports 5432 and 4000
@@ -56,31 +50,7 @@ docker-compose down
 
 # Functions and their return values if request is successful
 
-### createRepo
-
-```
-201
-```
-
 ### createUser
-
-```
-201
-```
-
-### createPullRequest
-
-```
-201
-```
-
-### setVote
-
-```
-201 if valid, 403 if user has voted on this pull request already
-```
-
-### transferTokens
 
 ```
 201
@@ -89,7 +59,7 @@ docker-compose down
 ### getContributorID
 
 ```
-a string with the contributor id
+a string with the contributor id (ethereum address)
 ```
 
 ### getContributorName
@@ -98,62 +68,8 @@ a string with the contributor id
 a string with the contributor's name (github login)
 ```
 
-### getRepoStatus
+### getContributorSignature
 
 ```
-a boolean, true if repo is tokenized, else false
-```
-
-### getAuthorizedContributor
-
-```
-a boolean
-```
-
-### getPRStatus
-
-```
-a string of either closed open or merge
-```
-
-### getRepoToken amount
-
-```
-a string of 1000000
-```
-
-### getContributorTokenAmount
-
-```
-a string of the amount of tokens a user has in the given repo
-```
-
-### getVoteNoTotals
-
-```
-a string of the total number of votes against a pull request
-```
-
-### getVoteYesTotals
-
-```
-a string of the total number of votes in favor of a pull request
-```
-
-### getVoteStatus
-
-```
-Use getPRStatus instead
-```
-
-### getQuorum
-
-```
-a string representing the repo's quorum. default is ".34"
-```
-
-### setQuorum
-
-```
-204
+a string with the contributor's signature (ethereum key)
 ```
