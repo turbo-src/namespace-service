@@ -5,12 +5,12 @@ services:
     depends_on:
       - db
     ports:
-      - 4002:4002
+      - 4003:4003
     expose:
-      - "4002"
+      - "4003"
     build: ./
     environment:
-      DB_URL: postgresql://user:password@db:5432/privatestore
+      DB_URL: postgresql://user:password@db:5432/namespace-db
     tty: true
 
   db:
@@ -21,7 +21,7 @@ services:
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
-      POSTGRES_DB: privatestore
+      POSTGRES_DB: namespace-db
     volumes:
       - db-data:/db-data/
 
