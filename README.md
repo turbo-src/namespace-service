@@ -24,7 +24,7 @@ docker exec -it namespace-db_library_1 bash
 npm start
 ```
 
-### New terminal window
+### New terminal window, same command: docker exec...
 
 ### Run tests
 
