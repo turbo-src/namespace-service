@@ -13,6 +13,7 @@ services:
       DB_URL: postgresql://user:password@db:5432/namespace-db
     tty: true
 
+
   db:
     image: postgres:13.7-bullseye
     restart: always
