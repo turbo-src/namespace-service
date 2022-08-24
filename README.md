@@ -18,7 +18,7 @@ docker pull node:16.15-bullseye
 docker exec -it namespace-db_library_1 bash
 ```
 
-### Connect to the database, start the Graphql server, ports 5432 and 4000
+### Connect to the database, start the Graphql server, ports 5432 and 4003
 
 ```
 npm start
