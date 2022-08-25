@@ -5,6 +5,7 @@ const port =
   process.env.NODE_ENV === "development"
     ? "http://localhost:4003"
     : "https://namespace-db.fly.dev";
+
 var root = {
   postCreateUser: async (
     owner,
