@@ -10,7 +10,7 @@ services:
       - "4003"
     build: ./
     environment:
-      DOCKER_DATABASE_URL: postgresql://user:password@db:5432/namespace-db
+      DOCKER_DATABASE_URL: postgresql://user:password@db:5433/namespace-db
     tty: true
 
 
@@ -18,7 +18,7 @@ services:
     image: postgres:13.7-bullseye
     restart: always
     ports:
-      - 5432:5433
+      - 5433:5432
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: password
