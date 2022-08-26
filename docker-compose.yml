@@ -10,7 +10,7 @@ services:
       - "4003"
     build: ./
     environment:
-      DOCKER_DATABASE_URL: postgresql://user:password@db:5433/namespace-db
+      DOCKER_DATABASE_URL: postgresql://user:password@db:5432/namespace-db
     tty: true
 
 
