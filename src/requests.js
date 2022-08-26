@@ -2,9 +2,9 @@ const superagent = require("superagent");
 require("dotenv").config();
 
 const port =
-  process.env.NODE_ENV === "development"
-    ? "http://localhost:4003"
-    : "https://namespace-db.fly.dev";
+  process.env.NODE_ENV === "fly"
+    ? "https://namespace-db.fly.dev"
+    : "http://localhost:4003";
 
 var root = {
   postCreateUser: async (
