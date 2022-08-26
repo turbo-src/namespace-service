@@ -19,12 +19,12 @@ var root = {
       .send({
         query: `{ createUser(owner: "${owner}", repo: "${repo}", contributor_id: "${contributor_id}", contributor_name: "${contributor_name}", contributor_signature: "${contributor_signature}") }`,
       })
-      .set("accept", "json")
-      .end((err, res) => {
-        //Calling the end function will send the request
-        const json = JSON.parse(res.text);
-        return json.data.createUser;
-      });
+      .set("accept", "json");
+    // .end((err, res) => {
+    //   //Calling the end function will send the request
+    // });
+    const json = JSON.parse(res.text);
+    return json.data.createUser;
   },
   postGetContributorName: async (owner, repo, pr_id, contributor_id) => {
     const res = await superagent
