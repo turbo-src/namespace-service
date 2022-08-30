@@ -62,7 +62,9 @@ const port = process.env.PORT || 4003;
 const app = express();
 
 app.listen(port);
-console.log(`Running a GraphQL API server on port ${port}/graphql`);
+console.log(
+  `Namespace Server: Running a GraphQL API server on port ${port}/graphql`
+);
 
 app.use(
   "/graphql",
