@@ -53,11 +53,11 @@ var root = {
     const json = JSON.parse(res.text);
     return json.data.getContributorID;
   },
-  postGetContributorSignature: async (owner, repo, pr_id, contributor_name) => {
+  postGetContributorSignature: async (owner, repo, pr_id, contributor_id) => {
     const res = await superagent
       .post(`${port}/graphql`)
       .send({
-        query: `{ getContributorSignature(owner: "${owner}", repo: "${repo}", pr_id: "${pr_id}", contributor_name: "${contributor_name}") }`,
+        query: `{ getContributorSignature(owner: "${owner}", repo: "${repo}", pr_id: "${pr_id}", contributor_id: "${contributor_id}") }`,
       })
       .set("accept", "json");
     //.end((err, res) => {
