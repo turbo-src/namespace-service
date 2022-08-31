@@ -73,6 +73,13 @@ describe("postCreateUser", function () {
       /*contributor_name:*/ "ignacius",
       /*contributor_signature:*/ "ec9a715c2ac1e570cc214b5f8d23bd7102affb5372dfcabd8ecd206c907e03f2"
     );
+    await postCreateUser(
+      /*owner:*/ "",
+      /*repo:*/ "",
+      /*contributor_id:*/ "1",
+      /*contributor_name:*/ "root",
+      /*contributor_signature:*/ "11"
+    );
     const mary = await postGetContributorName(
       "0x0cc59907e45614540dAa22Cf62520306439360f2"
     );
