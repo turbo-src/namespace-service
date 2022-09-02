@@ -3,6 +3,7 @@ version: "3.0"
 services:
   service:
     image: namespace-service:latest
+    restart: always
     depends_on:
       - db
     ports:
@@ -12,7 +13,7 @@ services:
     build: ./
     environment:
       DOCKER_DB_URL: postgresql://user:password@db:5432/namespace-db
-    tty: true
+    command: npm start
 
 
   db:
