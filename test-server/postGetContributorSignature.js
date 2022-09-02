@@ -7,7 +7,7 @@ describe("postGetContributorSignature", function () {
       "",
       "",
       "",
-      "michael"
+      "0x0c55D3B26A1229B9D707a4272F55E66103301858"
     );
 
     assert.equal(

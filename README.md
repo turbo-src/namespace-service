@@ -1,46 +1,38 @@
 # Usage
 
-### Build image and containers in detatched mode from root directory
+### Build namespace service
 
 ```
-docker-compose up --build -d
+docker build -t namespace-service:latest .
 ```
 
-### If not building, may need to pull node image:
+### Pull postgres image.
 
 ```
-docker pull node:16.15-bullseye
-```
-
-### Enter bash or shell session in container namespace_library_1
+docker pull postgres:13.7-bullseye
 
 ```
-docker exec -it namespace-db_library_1 bash
-```
 
-### Connect to the database, start the Graphql server, ports 5432 and 4003
+### Create containers in detatched mode from root directory
 
 ```
-npm start
+docker-compose up -d
 ```
-
-### New terminal window, same command: docker exec...
 
 ### Run tests
+
+Enter bash or shell session in service container (see `docker ps` for name).
+
+```
+docker exec -it <service container> bash
+```
+
+Run tests.
 
 ```
 ./test-server/run-tests.sh
 ```
 
-### N.B.:
-
-Enter npm start again to clear database if running tests a second time.
-
-### Exit Shell or Bash session
-
-```
-exit
-```
 
 ### Remove containers when done:
 

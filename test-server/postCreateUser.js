@@ -73,64 +73,41 @@ describe("postCreateUser", function () {
       /*contributor_name:*/ "ignacius",
       /*contributor_signature:*/ "ec9a715c2ac1e570cc214b5f8d23bd7102affb5372dfcabd8ecd206c907e03f2"
     );
+    await postCreateUser(
+      /*owner:*/ "",
+      /*repo:*/ "",
+      /*contributor_id:*/ "1",
+      /*contributor_name:*/ "root",
+      /*contributor_signature:*/ "11"
+    );
     const mary = await postGetContributorName(
-      "",
-      "",
-      "",
       "0x0cc59907e45614540dAa22Cf62520306439360f2"
     );
     const joseph = await postGetContributorName(
-      "",
-      "",
-      "",
       "0x0c0DDaD894E3436C34AecD5722F0798Da88Bc971"
     );
     const gabriel = await postGetContributorName(
-      "",
-      "",
-      "",
       "0x0cf39Fb66C908A8aAb733F52BaDbf1ED58036983"
     );
     const michael = await postGetContributorName(
-      "",
-      "",
-      "",
       "0x0c55D3B26A1229B9D707a4272F55E66103301858"
     );
     const magda = await postGetContributorName(
-      "",
-      "",
-      "",
       "0x0cBA86ac2Cd45DfA9bA798e86b24dCb074E92925"
     );
     const thomas = await postGetContributorName(
-      "",
-      "",
-      "",
       "0x0c3B10A0B8bC506833A1CD54672a3b67502d7a53"
     );
     const ben = await postGetContributorName(
-      "",
-      "",
-      "",
       "0x0ceeed31E39a896CB5f69f1a05c013a7840A5f78"
     );
     const louis = await postGetContributorName(
-      "",
-      "",
-      "",
       "0x0cea312808EdcdC905428D3922480930689F4500"
     );
     const thibaut = await postGetContributorName(
-      "",
-      "",
-      "",
       "0x0c587fB3EBA5e824Df543bDE5d972Fd9F7cFC164"
     );
     const ignacius = await postGetContributorName(
-      "",
-      "",
-      "",
       "0x0c16EFDc6e6490fd6066AB794Dc841A50eB5C90C"
     );
     assert.equal(mary, "mary", "Failed to create a user");
