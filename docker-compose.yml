@@ -1,7 +1,8 @@
 version: "3.0"
 
 services:
-  library:
+  service:
+    image: namespace-service:latest
     depends_on:
       - db
     ports:
