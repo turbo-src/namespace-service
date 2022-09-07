@@ -13,10 +13,10 @@ docker pull postgres:13.7-bullseye
 
 ```
 
-### Create containers in detatched mode from root directory
+### Launch containers.
 
 ```
-docker-compose up -d
+docker-compose up --build
 ```
 
 ### Run tests
