@@ -49,6 +49,26 @@ flyctl restart <app name>
 
 - Takes ~ 2 minutes, ensure to log in correctly
 
+# Environment Variables
+
+```
+flyctl secrets set <KEY>=<VALUE>
+```
+
+```
+flyctl secrets list
+```
+
+## NB
+
+When you view environment variables set in Fly.io the values displayed will be DIFFERENT THAN THEIR ACTUAL VALUE.
+Fly.io does not display environment variables for security reasons. They display a hashed value instead. If you
+have doubts about the accuracy of an environment variable, reset it with fly secrets set to overwrite it. If the value
+is different than the one stored, it will redploy. If it is the same, it will return a message saying there is no
+difference between the old value and the new value.
+
+https://fly.io/docs/reference/secrets/#setting-secrets
+
 ### Notes:
 
 - Deploying reads your Dockerfile, builds and then deploys the Docker image to fly.io at https://private-store.fly.dev/
