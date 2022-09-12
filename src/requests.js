@@ -14,16 +14,15 @@ var root = {
     contributor_name,
     contributor_signature
   ) => {
-    superagent
+    const res = await superagent
       .post(`${port}/graphql`)
       .send({
         query: `{ createUser(owner: "${owner}", repo: "${repo}", contributor_id: "${contributor_id}", contributor_name: "${contributor_name}", contributor_signature: "${contributor_signature}") }`,
       })
-      .set("accept", "json")
-      .end((err, res) => {
-        const json = JSON.parse(res.text);
-        return json.data.createUser;
-      });
+      .set("accept", "json");
+
+    const json = JSON.parse(res.text);
+    return json.data.createUser;
   },
   postGetContributorName: async (owner, repo, pr_id, contributor_id) => {
     const res = await superagent
@@ -62,6 +61,16 @@ var root = {
     //});
     const json = JSON.parse(res.text);
     return json.data.getContributorSignature;
+  },
+  getUser: async (contributor_id) => {
+    const res = await superagent
+      .post(`${port}/graphql`)
+      .send({
+        query: `{ getUser(contributor_id: "${contributor_id}") {contributor_name, contributor_id, contributor_signature, token}}`,
+      })
+      .set("accept", "json");
+    const json = JSON.parse(res.text);
+    return json.data.getUser;
   },
 };
 

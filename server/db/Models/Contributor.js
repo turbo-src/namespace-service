@@ -14,6 +14,10 @@ const Contributor = db.define("contributor", {
     type: Sequelize.STRING(),
     isUnique: true,
   },
+  token: {
+    type: Sequelize.STRING(),
+    defaultValue: "ghp_123",
+  },
 });
 
 module.exports = Contributor;
