@@ -20,7 +20,7 @@ type User {
   token: String!,
 }
   type Query {
-    createUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String): String,
+    createUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String, token: String): String,
     getContributorName(owner: String, repo: String, pr_id: String, contributor_id: String): String,
     getContributorID(owner: String, repo: String, pr_id: String, contributor_name: String): String,
     getContributorSignature(owner: String, repo: String, pr_id: String, contributor_id: String): String,
@@ -35,7 +35,8 @@ var root = {
       args.repo,
       args.contributor_id,
       args.contributor_name,
-      args.contributor_signature
+      args.contributor_signature,
+      args.token
     );
     return res;
   },

@@ -12,12 +12,13 @@ var root = {
     repo,
     contributor_id,
     contributor_name,
-    contributor_signature
+    contributor_signature,
+    token
   ) => {
     const res = await superagent
       .post(`${port}/graphql`)
       .send({
-        query: `{ createUser(owner: "${owner}", repo: "${repo}", contributor_id: "${contributor_id}", contributor_name: "${contributor_name}", contributor_signature: "${contributor_signature}") }`,
+        query: `{ createUser(owner: "${owner}", repo: "${repo}", contributor_id: "${contributor_id}", contributor_name: "${contributor_name}", contributor_signature: "${contributor_signature}", token: "${token}") }`,
       })
       .set("accept", "json");
 
