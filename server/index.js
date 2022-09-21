@@ -21,9 +21,9 @@ type User {
 }
   type Query {
     createUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String, token: String): String,
-    getContributorName(owner: String, repo: String, pr_id: String, contributor_id: String): String,
-    getContributorID(owner: String, repo: String, pr_id: String, contributor_name: String): String,
-    getContributorSignature(owner: String, repo: String, pr_id: String, contributor_id: String): String,
+    getContributorName(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
+    getContributorID(owner: String, repo: String, defaultHash: String, contributor_name: String): String,
+    getContributorSignature(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
     getUser(contributor_id: String): User,
   }
 `);
@@ -44,7 +44,7 @@ var root = {
     const res = await getContributorName(
       args.owner,
       args.repo,
-      args.pr_id,
+      args.defaultHash,
       args.contributor_id
     );
     return res;
@@ -53,7 +53,7 @@ var root = {
     const res = await getContributorID(
       args.owner,
       args.repo,
-      args.pr_id,
+      args.defaultHash,
       args.contributor_name
     );
     return res;
@@ -62,7 +62,7 @@ var root = {
     const res = await getContributorSignature(
       args.owner,
       args.repo,
-      args.pr_id,
+      args.defaultHash,
       args.contributor_id
     );
     return res;
