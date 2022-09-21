@@ -12,7 +12,7 @@ describe("getUser", function () {
     );
     assert.equal(
       user.token,
-      "ghp_123",
+      "ghp_4",
       "Failed to get a contributor's token based on their id"
     );
   });
