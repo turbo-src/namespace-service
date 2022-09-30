@@ -3,6 +3,7 @@ version: "3.0"
 services:
   service:
     image: namespace-service:latest
+    restart: always
     depends_on:
       - db
     ports:
