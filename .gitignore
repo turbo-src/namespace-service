@@ -2,3 +2,4 @@
 .eslintrc.yml
 node_modules
 .env
+.neon.env
