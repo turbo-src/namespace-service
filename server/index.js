@@ -93,9 +93,9 @@ app.use(
 
 // Will clear database data on npm start with {force: true}:
 // db.sync({force:true})
+
 // Will NOT clear database data on npm start:
-db.sync()
-.then(() => {
+db.sync().then(() => {
   console.log('Connection has been established successfully.');
 })
 .catch(err => {
