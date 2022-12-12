@@ -7,6 +7,10 @@ const dbUrl =
 
 const db = new Sequelize(dbUrl, {
   logging: false,
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: true
+  }
 });
 
 module.exports = db;
