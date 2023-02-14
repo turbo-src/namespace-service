@@ -1,1 +1,1 @@
-npm test test-server/postCreateUser.js test-server/postGetContributorID.js test-server/postGetContributorSignature.js test-server/postgetContributorName.js test-server/getUser.js
+npm test test-server/postCreateUser.js test-server/postGetContributorID.js test-server/postGetContributorSignature.js test-server/postGetContributorToken.js test-server/postgetContributorName.js test-server/getUser.js

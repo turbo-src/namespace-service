@@ -63,6 +63,18 @@ var root = {
     const json = JSON.parse(res.text);
     return json.data.getContributorSignature;
   },
+  postGetContributorToken: async (contributor_id) => {
+    const res = await superagent
+      .post(`${port}/graphql`)
+      .send({
+        query: `{ getContributorToken(contributor_id: "${contributor_id}") }`,
+      })
+      .set("accept", "json");
+    //.end((err, res) => {
+    //});
+    const json = JSON.parse(res.text);
+    return json.data.getContributorToken;
+  },
   getUser: async (contributor_id) => {
     const res = await superagent
       .post(`${port}/graphql`)
