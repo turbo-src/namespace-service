@@ -2,7 +2,7 @@ const assert = require("assert");
 const { postGetContributorToken } = require("../src/requests");
 
 describe("postGetContributorToken", function () {
-  it("should return a contributor's signature (ethereum key) based on their contributor_id", async function () {
+  it("should return a contributor's github token based on their contributor_id", async function () {
     let token1 = await postGetContributorToken(
       "0x0cc59907e45614540dAa22Cf62520306439360f2"
     );
