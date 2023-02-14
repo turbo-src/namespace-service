@@ -9,6 +9,7 @@ const {
   getContributorID,
   getContributorSignature,
   getContributorName,
+  getContributorToken,
   getUser,
 } = require("../lib");
 
@@ -24,6 +25,7 @@ type User {
     getContributorName(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
     getContributorID(owner: String, repo: String, defaultHash: String, contributor_name: String): String,
     getContributorSignature(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
+    getContributorToken(contributor_id: String): String,
     getUser(contributor_id: String): User,
   }
 `);
@@ -63,6 +65,12 @@ var root = {
       args.owner,
       args.repo,
       args.defaultHash,
+      args.contributor_id
+    );
+    return res;
+  },
+  getContributorToken: async (args) => {
+    const res = await getContributorToken(
       args.contributor_id
     );
     return res;
