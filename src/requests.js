@@ -73,6 +73,16 @@ var root = {
     const json = JSON.parse(res.text);
     return json.data.getUser;
   },
+  setToken: async (contributor_id, token) => {
+    const res = await superagent
+      .post(`${port}/graphql`)
+      .send({
+        query: `{ setToken(contributor_id: "${contributor_id}", token: "${token}") }`,
+      })
+      .set("accept", "json");
+    const json = JSON.parse(res.text);
+    return json.data.getUser;
+  },
 };
 
 module.exports = root;
