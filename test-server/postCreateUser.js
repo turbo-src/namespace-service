@@ -83,6 +83,14 @@ describe("postCreateUser", function () {
       /*contributor_signature:*/ "ec9a715c2ac1e570cc214b5f8d23bd7102affb5372dfcabd8ecd206c907e03f2",
       /*token:*/ "ghp_10",
     );
+    const samson = await postCreateUser(
+      /*owner:*/ "",
+      /*repo:*/ "",
+      /*contributor_id:*/ "none",
+      /*contributor_name:*/ "samson",
+      /*contributor_signature:*/ "none",
+      /*token:*/ "ghp_11",
+    );
     assert.equal(mary, 201, "Failed to create a user");
     assert.equal(joseph, 201, "Failed to create a user");
     assert.equal(gabriel, 201, "Failed to create a user");
@@ -93,5 +101,6 @@ describe("postCreateUser", function () {
     assert.equal(louis, 201, "Failed to create a user");
     assert.equal(thibaut, 201, "Failed to create a user");
     assert.equal(ignacius, 201, "Failed to create a user");
+    assert.equal(samson, 201, "Failed to create a user");
   });
 });
