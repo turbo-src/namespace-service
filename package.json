@@ -10,9 +10,10 @@
       "test": "/usr/local/node_modules/mocha/bin/mocha.js"
    },
    "dependencies": {
+      "ethereumjs-wallet": "^1.0.2",
       "express": "^4.17.1",
       "express-graphql": "^0.12.0",
-      "graphql": "^16.0.1",
+      "graphql": "^15.3.0",
       "mocha": "^9.2.0",
       "pg": "^8.7.3",
       "pg-hstore": "^2.3.4",

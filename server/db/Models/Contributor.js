@@ -4,15 +4,15 @@ const db = require("../db");
 const Contributor = db.define("contributor", {
   contributor_name: {
     type: Sequelize.STRING(),
-    isUnique: true,
+    unique: true,
   },
   contributor_id: {
     type: Sequelize.STRING(),
-    isUnique: true,
+    unique: true,
   },
   contributor_signature: {
     type: Sequelize.STRING(),
-    isUnique: true,
+    unique: true,
   },
   token: {
     type: Sequelize.STRING(),
