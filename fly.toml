@@ -1,6 +1,6 @@
-# fly.toml file generated for turbosrc-reibase-namespace on 2022-11-03T10:56:50-04:00
+# fly.toml file generated for turbosrc-reibase-alternate-namespace on 2023-02-28T11:19:44-05:00
 
-app = "turbosrc-reibase-namespace"
+app = "turbosrc-reibase-alternate-namespace"
 kill_signal = "SIGINT"
 kill_timeout = 5
 processes = []
