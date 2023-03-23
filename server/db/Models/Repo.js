@@ -21,10 +21,13 @@ const Repo = db.define("repo", {
     type: Sequelize.STRING(),
     defaultValue: "TBD",
   },
+  repo_uri: {
+    type: Sequelize.STRING(),
+  },
   metadata: {
     type: Sequelize.STRING(),
     defaultValue: "TBD",
   },
 });
 
-module.exports = repo;
+module.exports = Repo;
