@@ -11,6 +11,7 @@ const {
   getContributorName,
   getUser,
   findOrCreateUser,
+  createRepo,
 } = require("../lib");
 
 var schema = buildSchema(`
@@ -27,6 +28,7 @@ type User {
     getContributorSignature(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
     getUser(contributor_id: String): User,
     findOrCreateUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String, token: String): User,
+    createRepo(repo_name: String, repo_id: String, repo_signature: String, contributor_id: String, repo_uri: String, app: String, metadata: String): String,
   }
 `);
 
@@ -81,6 +83,18 @@ var root = {
       args.contributor_name,
       args.contributor_signature,
       args.token
+    );
+    return res;
+  },
+  createRepo: async (args) => {
+    const res = await createRepo(
+      args.repo_name,
+      args.repo_id,
+      args.repo_signature,
+      args.contributor_id,
+      args.repo_uri,
+      args.app,
+      args.metadata
     );
     return res;
   },
