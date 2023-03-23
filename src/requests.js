@@ -89,6 +89,25 @@ var root = {
     const json = JSON.parse(res.text);
     return json.data.findOrCreateUser;
   },
+  createRepo: async (
+    repo_name,
+    repo_id,
+    repo_signature,
+    contributor_id,
+    repo_uri,
+    app,
+    metadata
+  ) => {
+    const res = await superagent
+      .post(`${port}/graphql`)
+      .send({
+        query: `{ createRepo(repo_name: "${repo_name}", repo_id: "${repo_id}", repo_signature: "${repo_signature}", contributor_id: "${contributor_id}", repo_uri: "${repo_uri}", app: "${app}", metadata: "${metadata}") }`,
+      })
+      .set("accept", "json");
+
+    const json = JSON.parse(res.text);
+    return json.data.createRepo;
+  },
 };
 
 module.exports = root;
