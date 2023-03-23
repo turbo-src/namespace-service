@@ -12,6 +12,8 @@ const {
   getUser,
   findOrCreateUser,
   createRepo,
+  getRepo,
+  setRepo,
 } = require("../lib");
 
 var schema = buildSchema(`
@@ -21,6 +23,15 @@ type User {
   contributor_signature: String!,
   token: String!,
 }
+type Repo {
+  repo_name: String!,
+  repo_id: String!,
+  repo_signature: String!,
+  contributor_id: String!,
+  app: String!,
+  repo_uri: String!,
+  metadata: String!,
+}
   type Query {
     createUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String, token: String): String,
     getContributorName(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
@@ -29,6 +40,8 @@ type User {
     getUser(contributor_id: String): User,
     findOrCreateUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String, token: String): User,
     createRepo(repo_name: String, repo_id: String, repo_signature: String, contributor_id: String, app: String, repo_uri: String, metadata: String): String,
+    setRepo(repo_name: String, repo_id: String, repo_signature: String, contributor_id: String, app: String, repo_uri: String, metadata: String ): String,
+    getRepo(repo_id: String): Repo,
   }
 `);
 
@@ -88,6 +101,22 @@ var root = {
   },
   createRepo: async (args) => {
     const res = await createRepo(
+      args.repo_name,
+      args.repo_id,
+      args.repo_signature,
+      args.contributor_id,
+      args.app,
+      args.repo_uri,
+      args.metadata
+    );
+    return res;
+  },
+  getRepo: async (args) => {
+    const res = await getRepo(args.repo_id);
+    return res;
+  },
+  setRepo: async (args) => {
+    const res = await setRepo(
       args.repo_name,
       args.repo_id,
       args.repo_signature,

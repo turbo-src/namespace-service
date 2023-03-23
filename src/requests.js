@@ -108,6 +108,26 @@ var root = {
     const json = JSON.parse(res.text);
     return json.data.createRepo;
   },
+  getRepo: async (repo_id) => {
+    const res = await superagent
+      .post(`${port}/graphql`)
+      .send({
+        query: `{ getRepo(repo_id: "${repo_id}") {repo_name, repo_id, repo_signature, contributor_id, app, repo_uri, metadata}}`,
+      })
+      .set("accept", "json");
+    const json = JSON.parse(res.text);
+    return json.data.getRepo;
+  },
+  setRepo: async (repo_name, repo_id, repo_signature, contributor_id, app, repo_uri, metadata) => {
+    const res = await superagent
+      .post(`${port}/graphql`)
+      .send({
+        query: `{ setRepo(repo_name: "${repo_name}", repo_id: "${repo_id}", repo_signature: "${repo_signature}", contributor_id: "${contributor_id}", app: "${app}", repo_uri: "${repo_uri}", metadata: "${metadata}" ) {repo_name, repo_id, repo_signature, contributor_id, app, repo_uri, metadata}}`,
+      })
+      .set("accept", "json");
+    const json = JSON.parse(res.text);
+    return json.data.setRepo;
+  },
 };
 
 module.exports = root;
