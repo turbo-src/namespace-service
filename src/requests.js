@@ -94,14 +94,14 @@ var root = {
     repo_id,
     repo_signature,
     contributor_id,
-    repo_uri,
     app,
+    repo_uri,
     metadata
   ) => {
     const res = await superagent
       .post(`${port}/graphql`)
       .send({
-        query: `{ createRepo(repo_name: "${repo_name}", repo_id: "${repo_id}", repo_signature: "${repo_signature}", contributor_id: "${contributor_id}", repo_uri: "${repo_uri}", app: "${app}", metadata: "${metadata}") }`,
+        query: `{ createRepo(repo_name: "${repo_name}", repo_id: "${repo_id}", repo_signature: "${repo_signature}", contributor_id: "${contributor_id}", app: "${app}", repo_uri: "${repo_uri}", metadata: "${metadata}") }`,
       })
       .set("accept", "json");
 
