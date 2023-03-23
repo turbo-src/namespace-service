@@ -28,7 +28,7 @@ type User {
     getContributorSignature(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
     getUser(contributor_id: String): User,
     findOrCreateUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String, token: String): User,
-    createRepo(repo_name: String, repo_id: String, repo_signature: String, contributor_id: String, repo_uri: String, app: String, metadata: String): String,
+    createRepo(repo_name: String, repo_id: String, repo_signature: String, contributor_id: String, app: String, repo_uri: String, metadata: String): String,
   }
 `);
 
@@ -92,8 +92,8 @@ var root = {
       args.repo_id,
       args.repo_signature,
       args.contributor_id,
-      args.repo_uri,
       args.app,
+      args.repo_uri,
       args.metadata
     );
     return res;

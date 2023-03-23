@@ -10,12 +10,12 @@ const Repo = db.define("repo", {
     type: Sequelize.STRING(),
     unique: true,
   },
-  contributor_id: {
-    type: Sequelize.STRING(),
-  },
   repo_signature: {
     type: Sequelize.STRING(),
     unique: true,
+  },
+  contributor_id: {
+    type: Sequelize.STRING(),
   },
   app: {
     type: Sequelize.STRING(),
