@@ -122,7 +122,7 @@ var root = {
     const res = await superagent
       .post(`${port}/graphql`)
       .send({
-        query: `{ setRepo(repo_name: "${repo_name}", repo_id: "${repo_id}", repo_signature: "${repo_signature}", contributor_id: "${contributor_id}", app: "${app}", repo_uri: "${repo_uri}", metadata: "${metadata}" ) {repo_name, repo_id, repo_signature, contributor_id, app, repo_uri, metadata}}`,
+        query: `{ setRepo(repo_name: "${repo_name}", repo_id: "${repo_id}", repo_signature: "${repo_signature}", contributor_id: "${contributor_id}", app: "${app}", repo_uri: "${repo_uri}", metadata: "${metadata}") }`,
       })
       .set("accept", "json");
     const json = JSON.parse(res.text);

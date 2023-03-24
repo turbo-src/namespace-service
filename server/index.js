@@ -40,8 +40,8 @@ type Repo {
     getUser(contributor_id: String): User,
     findOrCreateUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String, token: String): User,
     createRepo(repo_name: String, repo_id: String, repo_signature: String, contributor_id: String, app: String, repo_uri: String, metadata: String): String,
-    setRepo(repo_name: String, repo_id: String, repo_signature: String, contributor_id: String, app: String, repo_uri: String, metadata: String ): String,
-    getRepo(repo_id: String): Repo,
+    setRepo(repo_name: String, repo_id: String, repo_signature: String, contributor_id: String, app: String, repo_uri: String, metadata: String): String,
+    getRepo(repo_name: String): Repo,
   }
 `);
 
@@ -112,7 +112,7 @@ var root = {
     return res;
   },
   getRepo: async (args) => {
-    const res = await getRepo(args.repo_id);
+    const res = await getRepo(args.repo_name);
     return res;
   },
   setRepo: async (args) => {
