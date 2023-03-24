@@ -6,8 +6,8 @@ describe("getRepo", function () {
     const repo = await getRepo("joseph/demoRepo");
 
     assert.equal(
-      repo.contributor_name,
-      "joseph",
+      repo.contributor_id,
+      "fbd2479a0a10ce2fe8649c413913648271749d9cc61f4d5c7c7b11606b2bb1da",
       "Failed to get a contributor's information based on their id"
     );
     assert.equal(
