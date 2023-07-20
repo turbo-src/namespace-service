@@ -15,7 +15,7 @@ describe("getRepo", function () {
 		assert.equal(
 			repoByID.status,
 			200,
-			"Failed to get a contributor's token based on its id"
+			"Failed to get a repo's information based on its id"
 		);
 		assert.equal(
 			repo404.status,
