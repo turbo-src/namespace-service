@@ -89,6 +89,18 @@ var root = {
     const json = JSON.parse(res.text);
     return json.data.findOrCreateUser;
   },
+  findOrCreateRepo: async (
+    repoName,
+    repoID) => {
+    const res = await superagent
+      .post(`${port}/graphql`)
+      .send({
+        query: `{ findOrCreateRepo(repoName: "${repoName}", repoID: "${repoID}") {status, repoName, repoID, repoSignature, message}}`,
+      })
+      .set("accept", "json");
+    const json = JSON.parse(res.text);
+    return json.data.findOrCreateRepo;
+  },
 };
 
 module.exports = root;
