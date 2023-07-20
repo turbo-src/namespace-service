@@ -101,6 +101,17 @@ var root = {
     const json = JSON.parse(res.text);
     return json.data.findOrCreateRepo;
   },
+  getRepo: async (
+    repoNameOrID) => {
+    const res = await superagent
+      .post(`${port}/graphql`)
+      .send({
+        query: `{ getRepo(repoNameOrID: "${repoNameOrID}") {status, repoName, repoID, repoSignature, message}}`,
+      })
+      .set("accept", "json");
+    const json = JSON.parse(res.text);
+    return json.data.getRepo;
+  },
 };
 
 module.exports = root;

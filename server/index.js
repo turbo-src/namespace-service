@@ -11,7 +11,8 @@ const {
   getContributorName,
   getUser,
   findOrCreateUser,
-  findOrCreateRepo
+  findOrCreateRepo,
+  getRepo
 } = require("../lib");
 
 var schema = buildSchema(`
@@ -36,6 +37,7 @@ type Repo {
     getUser(contributor_id: String): User,
     findOrCreateUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String, token: String): User,
     findOrCreateRepo(status: Int, message: String, repoName: String, repoID: String, repoSignature: String): Repo,
+    getRepo(repoNameOrID: String): Repo,
   }
 `);
 
@@ -97,6 +99,12 @@ var root = {
     const res = await findOrCreateRepo(
       args.repoName,
       args.repoID,
+    );
+    return res;
+  },
+  getRepo: async (args) => {
+    const res = await getRepo(
+      args.repoNameOrID,
     );
     return res;
   },
