@@ -83,15 +83,137 @@ describe("postCreateUser", function () {
       /*contributor_signature:*/ "ec9a715c2ac1e570cc214b5f8d23bd7102affb5372dfcabd8ecd206c907e03f2",
       /*token:*/ "ghp_10",
     );
-    assert.equal(mary, 201, "Failed to create a user");
-    assert.equal(joseph, 201, "Failed to create a user");
-    assert.equal(gabriel, 201, "Failed to create a user");
-    assert.equal(michael, 201, "Failed to create a user");
-    assert.equal(magda, 201, "Failed to create a user");
-    assert.equal(thomas, 201, "Failed to create a user");
-    assert.equal(ben, 201, "Failed to create a user");
-    assert.equal(louis, 201, "Failed to create a user");
-    assert.equal(thibaut, 201, "Failed to create a user");
-    assert.equal(ignacius, 201, "Failed to create a user");
+
+    assert.deepEqual(
+      mary,
+      {
+        status: "success",
+        message: "User created successfully",
+        info: {
+          contributor_id: "0x0cc59907e45614540dAa22Cf62520306439360f2",
+          contributor_name: "mary"
+        }
+      }
+    )
+
+    assert.deepEqual(
+      joseph,
+      {
+        status: "success",
+        message: "User created successfully",
+        info: {
+          contributor_id: "0x0c0DDaD894E3436C34AecD5722F0798Da88Bc971",
+          contributor_name: "joseph"
+        }
+      }
+    )
+
+    assert.deepEqual(
+      gabriel,
+      {
+        status: "success",
+        message: "User created successfully",
+        info: {
+          contributor_id: "0x0cf39Fb66C908A8aAb733F52BaDbf1ED58036983",
+          contributor_name: "gabriel"
+        }
+      }
+    )
+
+    assert.deepEqual(
+      michael,
+      {
+        status: "success",
+        message: "User created successfully",
+        info: {
+          contributor_id: "0x0c55D3B26A1229B9D707a4272F55E66103301858",
+          contributor_name: "michael"
+        }
+      }
+    )
+
+    assert.deepEqual(
+      magda,
+      {
+        status: "success",
+        message: "User created successfully",
+        info: {
+          contributor_id: "0x0cBA86ac2Cd45DfA9bA798e86b24dCb074E92925",
+          contributor_name: "magda"
+        }
+      }
+    )
+
+    assert.deepEqual(
+      thomas,
+      {
+        status: "success",
+        message: "User created successfully",
+        info: {
+          contributor_id: "0x0c3B10A0B8bC506833A1CD54672a3b67502d7a53",
+          contributor_name: "thomas"
+        }
+      }
+    )
+
+    assert.deepEqual(
+      ben,
+      {
+        status: "success",
+        message: "User created successfully",
+        info: {
+          contributor_id: "0x0ceeed31E39a896CB5f69f1a05c013a7840A5f78",
+          contributor_name: "ben"
+        }
+      }
+    )
+
+    assert.deepEqual(
+      louis,
+      {
+        status: "success",
+        message: "User created successfully",
+        info: {
+          contributor_id: "0x0cea312808EdcdC905428D3922480930689F4500",
+          contributor_name: "louis"
+        }
+      }
+    )
+
+    assert.deepEqual(
+      thibaut,
+      {
+        status: "success",
+        message: "User created successfully",
+        info: {
+          contributor_id: "0x0c587fB3EBA5e824Df543bDE5d972Fd9F7cFC164",
+          contributor_name: "thibaut"
+        }
+      }
+    )
+
+    assert.deepEqual(
+      ignacius,
+      {
+        status: "success",
+        message: "User created successfully",
+        info: {
+          contributor_id: "0x0c16EFDc6e6490fd6066AB794Dc841A50eB5C90C",
+          contributor_name: "ignacius"
+        }
+      }
+    )
+
+    assert.deepEqual(
+      ignacius,
+      {
+        status: "success",
+        message: "User created successfully",
+        info: {
+          contributor_id: "0x0c16EFDc6e6490fd6066AB794Dc841A50eB5C90C",
+          contributor_name: "ignacius"
+        }
+      }
+    )
   });
 });

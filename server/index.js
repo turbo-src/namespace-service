@@ -16,12 +16,24 @@ const {
 } = require("../lib");
 
 var schema = buildSchema(`
+type CreateUserResponse {
+  status: String!
+  message: String!
+  info: UserInfo
+}
+
+type UserInfo {
+  contributor_id: String!
+  contributor_name: String!
+}
+
 type User {
   contributor_name: String!,
   contributor_id: String!,
   contributor_signature: String!,
   token: String!,
 }
+
 type Repo {
   status: Int!,
   message: String!,
@@ -30,7 +42,7 @@ type Repo {
   repoSignature: String!,
 }
   type Query {
-    createUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String, token: String): String,
+    createUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String, token: String): CreateUserResponse,
     getContributorName(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
     getContributorID(owner: String, repo: String, defaultHash: String, contributor_name: String): String,
     getContributorSignature(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
