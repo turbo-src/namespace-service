@@ -216,4 +216,24 @@ describe("postCreateUser", function () {
       }
     )
   });
+  it("should not be able recreate an existing contributor in the database", async function () {
+    assert.deepEqual(
+      await postCreateUser(
+        /*owner:*/ "",
+        /*repo:*/ "",
+        /*contributor_id:*/ "0x0c16EFDc6e6490fd6066AB794Dc841A50eB5C90C",
+        /*contributor_name:*/ "ignacius",
+        /*contributor_signature:*/ "ec9a715c2ac1e570cc214b5f8d23bd7102affb5372dfcabd8ecd206c907e03f2",
+        /*token:*/ "ghp_10",
+      ),
+      {
+        status: 'error',
+        message: 'Error creating user: SequelizeUniqueConstraintError: Validation error',
+        info: {
+          contributor_id: '0x0c16EFDc6e6490fd6066AB794Dc841A50eB5C90C',
+          contributor_name: 'ignacius'
+        }
+      }
+    )
+  });
 });
