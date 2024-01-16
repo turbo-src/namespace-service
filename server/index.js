@@ -42,7 +42,7 @@ type Repo {
   repoSignature: String!,
 }
   type Query {
-    createUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String, token: String): CreateUserResponse,
+    createUser(contributor_id: String, contributor_name: String, contributor_signature: String, token: String): CreateUserResponse,
     getContributorName(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
     getContributorID(owner: String, repo: String, defaultHash: String, contributor_name: String): String,
     getContributorSignature(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
