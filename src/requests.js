@@ -10,15 +10,18 @@ var root = {
   postCreateUser: async (
     contributor_id,
     contributor_name,
-    contributor_signature,
-    token
+    contributor_password,
   ) => {
     const res = await superagent
       .post(`${port}/graphql`)
       .send({
         query: `
           {
-            createUser(contributor_id: "${contributor_id}", contributor_name: "${contributor_name}", contributor_signature: "${contributor_signature}", token: "${token}") {
+            createUser(
+              contributor_id: "${contributor_id}",
+              contributor_name: "${contributor_name}",
+              contributor_password: "${contributor_password}",
+              ) {
               status
               message
               info {
