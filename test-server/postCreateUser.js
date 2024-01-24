@@ -57,7 +57,7 @@ describe("postCreateUser", function () {
     assert.deepEqual(
       mary,
       {
-        status: "error",
+        status: "success",
         message: "User created successfully",
         info: {
           contributor_id: "0x0cc59907e45614540dAa22Cf62520306439360f2",
