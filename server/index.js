@@ -16,7 +16,7 @@ const {
 } = require("../lib");
 
 var schema = buildSchema(`
-type CreateUserResponse {
+type UserResponse {
   status: String!
   message: String!
   info: UserInfo
@@ -46,7 +46,7 @@ type Repo {
       contributor_id: String,
       contributor_name: String,
       contributor_password: String,
-    ): CreateUserResponse,
+    ): UserResponse,
     getContributorName(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
     getContributorID(owner: String, repo: String, defaultHash: String, contributor_name: String): String,
     getContributorSignature(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
