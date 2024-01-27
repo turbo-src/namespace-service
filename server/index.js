@@ -50,7 +50,7 @@ type Repo {
     getContributorName(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
     getContributorID(owner: String, repo: String, defaultHash: String, contributor_name: String): String,
     getContributorSignature(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
-    getUser(contributor_id: String): User,
+    getUser(contributor_id: String): UserResponse,
     findOrCreateUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String, token: String): User,
     findOrCreateRepo(status: Int, message: String, repoName: String, repoID: String, repoSignature: String): Repo,
     getRepo(repoNameOrID: String): Repo,

@@ -11,8 +11,8 @@ describe("getUser", function () {
       "Failed to get a contributor's information based on their id"
     );
     assert.equal(
-      user.token,
-      "ghp_4",
+      user.id,
+      "0x0c55D3B26A1229B9D707a4272F55E66103301858",
       "Failed to get a contributor's token based on their id"
     );
   });
