@@ -18,13 +18,13 @@ const {
 var schema = buildSchema(`
 type UserResponse {
   status: String!
-  message: String!
+  message: String
   info: UserInfo
 }
 
 type UserInfo {
-  contributor_id: String!
-  contributor_name: String!
+  contributor_id: String
+  contributor_name: String
 }
 
 type User {
