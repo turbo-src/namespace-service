@@ -17,4 +17,20 @@ describe("getUser", function () {
       }
      )
     });
+  it("should say a contributor could not be found", async function () {
+    assert.deepEqual(
+      await getUser(
+        /*contributor_id:*/ '0x0000000000000000000000000000000000000000'
+      ),
+      {
+        status: "error",
+        message: "User not found",
+        info: {
+          contributor_id: null,
+          contributor_name: null
+        }
+      }
+     )
+    });
+
 });
