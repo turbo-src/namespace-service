@@ -212,10 +212,10 @@ describe("postCreateUser", function () {
       ),
       {
         status: 'error',
-        message: `User 'ignacius' already exists`,
+        message: `Contributor ID '0x0c16EFDc6e6490fd6066AB794Dc841A50eB5C90C' already exists`,
         info: {
           contributor_id: '0x0c16EFDc6e6490fd6066AB794Dc841A50eB5C90C',
-          contributor_name: 'ignacius'
+          contributor_name: 'user-with-duplicate-contributor-id'
         }
       }
     )
