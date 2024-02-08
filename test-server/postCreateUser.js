@@ -203,4 +203,21 @@ describe("postCreateUser", function () {
       }
     )
   });
+  it("should not be able create a contributor with an existing contributor_id in the database", async function () {
+    assert.deepEqual(
+      await postCreateUser(
+        /*contributor_id:*/ "0x0c16EFDc6e6490fd6066AB794Dc841A50eB5C90C",
+        /*contributor_name:*/ "user-with-duplicate-contributor-id",
+        /*contributor_password:*/ "ec9a715c2ac1e570cc214b5f8d23bd7102affb5372dfcabd8ecd206c907e03f2",
+      ),
+      {
+        status: 'error',
+        message: `User 'ignacius' already exists`,
+        info: {
+          contributor_id: '0x0c16EFDc6e6490fd6066AB794Dc841A50eB5C90C',
+          contributor_name: 'ignacius'
+        }
+      }
+    )
+  });
 });
