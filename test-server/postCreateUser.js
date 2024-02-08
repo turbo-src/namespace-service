@@ -203,6 +203,23 @@ describe("postCreateUser", function () {
       }
     )
   });
+  it("should not be able create a contributor with same name as another user in the database", async function () {
+    assert.deepEqual(
+      await postCreateUser(
+        /*contributor_id:*/ "0x0000000000000000000000000000000000000000",
+        /*contributor_name:*/ "ignacius",
+        /*contributor_password:*/ "0000000000000000000000000000000000000000000000000000000000000000",
+      ),
+      {
+        status: 'error',
+        message: `User 'ignacius' already exists`,
+        info: {
+          contributor_id: '0x0000000000000000000000000000000000000000',
+          contributor_name: 'ignacius'
+        }
+      }
+    )
+  });
   it("should not be able create a contributor with an existing contributor_id in the database", async function () {
     assert.deepEqual(
       await postCreateUser(
