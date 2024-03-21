@@ -103,7 +103,7 @@ var root = {
       .send({
         query: `
 	{
-	  getUser(contributor_name: "${contributor_name}")
+	  getUserByName(contributor_name: "${contributor_name}")
 	  {
               status
               message
