@@ -42,6 +42,7 @@ type Repo {
   repoID: String!,
   repoSignature: String!,
 }
+
   type Query {
     createUser(
       contributor_id: String,
@@ -53,8 +54,7 @@ type Repo {
     getContributorSignature(owner: String, repo: String, defaultHash: String, contributor_id: String): String,
     getUser(contributor_id: String): UserResponse,
     getUserByName(contributor_name: String): UserResponse,
-    findOrCreateUser(owner: String, repo: String, contributor_id: String, contributor_name: String, contributor_signature: String, token: String): User,
-    findOrCreateRepo(status: Int, message: String, repoName: String, repoID: String, repoSignature: String): Repo,
+    findOrCreateRepo(contributor_id: String, repo_name: String, contributor_password: String): Repo,
     getRepo(repoNameOrID: String): Repo,
   }
 `);
@@ -116,8 +116,9 @@ var root = {
   },
   findOrCreateRepo: async (args) => {
     const res = await findOrCreateRepo(
-      args.repoName,
-      args.repoID,
+      args.contributor_id,
+      args.repo_name,
+      args.contributor_password
     );
     return res;
   },

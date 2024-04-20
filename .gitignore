@@ -1,4 +1,4 @@
 .vscode
 .eslintrc.yml
 node_modules
-.env
+*.env
