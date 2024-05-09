@@ -17,6 +17,7 @@ RUN npm install --save-dev -y pg pg-hstore --prefix /usr/local/
 RUN npm install --save-dev -y dotenv --prefix /usr/local/
 RUN npm install --save-dev -y ethereumjs-wallet --prefix /usr/local/
 RUN npm install --save-dev -y algosdk --prefix /usr/local/
+RUN npm install --save-dev -y node-fetch --prefix /usr/local/
 
 COPY . .
 
