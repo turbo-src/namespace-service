@@ -1,31 +1,25 @@
 {
-   "name": "testing",
-   "version": "0.0.1",
-   "description": "Test opreturn contracts.",
-   "author": "author's name",
-   "license": "MIT",
-   "main": "index.js",
-   "scripts": {
-      "start": "node server",
-      "test": "/usr/local/node_modules/mocha/bin/mocha.js"
-   },
-   "dependencies": {
-      "ethereumjs-wallet": "^1.0.2",
-      "express": "^4.17.1",
-      "express-graphql": "^0.12.0",
-      "graphql": "^15.3.0",
-      "mocha": "^9.2.0",
-      "pg": "^8.7.3",
-      "pg-hstore": "^2.3.4",
-      "sequelize": "6.21.3",
-      "superagent": "^8.0.0"
-   },
-   "repository": {
-      "type": "git",
-      "url": ""
-   },
-   "homepage": "",
-   "devDependencies": {
-      "dotenv": "^16.0.1"
-   }
+  "name": "turbosrc-namespace",
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.12.0",
+    "graphql": "^15.8.0",
+    "superagent": "^8.0.0",
+    "mocha": "^10.2.0",
+    "sequelize": "^6.29.0",
+    "pg": "^8.9.0",
+    "pg-hstore": "^2.3.4",
+    "dotenv": "^16.0.3",
+    "ethereumjs-wallet": "^1.0.2",
+    "algosdk": "^2.1.0",
+    "node-fetch": "^3.3.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.3"
+  }
 }
