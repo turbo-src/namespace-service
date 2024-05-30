@@ -55,7 +55,7 @@ type Repo {
     getUser(contributor_id: String): UserResponse,
     getUserByName(contributor_name: String): UserResponse,
     findOrCreateRepo(contributor_id: String, repo_name: String, contributor_password: String): Repo,
-    getRepo(repoNameOrID: String): Repo,
+    getNameSpaceRepo(repoNameOrID: String): Repo,
   }
 `);
 
@@ -122,7 +122,7 @@ var root = {
     );
     return res;
   },
-  getRepo: async (args) => {
+  getNameSpaceRepo: async (args) => {
     const res = await getRepo(
       args.repoNameOrID,
     );
